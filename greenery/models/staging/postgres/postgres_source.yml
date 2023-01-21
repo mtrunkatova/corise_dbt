@@ -3,12 +3,12 @@ version: 2
 sources:
   - name: postgres
     database: coriso_course
-    schema: raw
+    schema: raw    
     tables:
-      Generate model
-      - name: orders
-      Generate model
-      - name: order_items
-      Generate model
       - name: addresses
-      
+      - name: events
+      - name: orders
+      - name: order_items
+      - name: products
+      - name: promos
+      - name: users
