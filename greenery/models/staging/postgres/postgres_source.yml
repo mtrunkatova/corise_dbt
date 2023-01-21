@@ -1,0 +1,14 @@
+version 2 # it must be version 2 :) 
+
+sources:
+  - name: postgres
+    database: coriso_course
+    schema: raw
+    tables:
+      Generate model
+      - name: orders
+      Generate model
+      - name: order_items
+      Generate model
+      - name: addresses
+      
