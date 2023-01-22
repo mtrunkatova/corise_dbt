@@ -1,10 +1,12 @@
+{{ config(materialized='table') }}
+
 with src_order_items as (
     select * from {{ source('postgres', 'order_items')}}
     ),
 
     renamed_recast as (
-select 
 
+select 
 order_id
 , product_id
 , quantity

@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with src_events as (
     select * from {{ source('postgres', 'events')}}
     ),

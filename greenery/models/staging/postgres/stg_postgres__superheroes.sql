@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with src_heroes as (
     select * from {{ source('postgres', 'superheroes')}}
     ),

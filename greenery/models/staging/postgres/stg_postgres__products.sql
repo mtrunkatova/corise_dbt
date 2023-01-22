@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with src_products as (
     select * from {{ source('postgres', 'products')}}
     ),
