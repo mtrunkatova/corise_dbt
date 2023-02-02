@@ -13,7 +13,7 @@ id
 , eye_color
 , race
 , hair_color
-, height
+, height::number as height
 , publisher
 , skin_color
 , alignment

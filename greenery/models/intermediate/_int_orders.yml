@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_orders
+    description: orders + promo
+    columns:
+      - name: order_id
+        description: primary key for the table
+        tests:
+          - not_null
+          - unique

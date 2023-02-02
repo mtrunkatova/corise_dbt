@@ -1,11 +1,13 @@
-{{
-    config(
-        target_schema = 'snapshots',
-        unique_key = 'id'
-
-        stragety = 'timestamp',
-        updated_at='updated_at'
-    )
-}}
-
-select * from {{ source('postgres', 'orders') }}
+{% snapshot order_snapshot %}
+    {{
+        config(
+            target_database = target.database,
+            target_schema = target.schema,        
+            
+            unique_key='order_id',
+            strategy='check',
+            check_cols=['status'],
+        )
+    }}
+SELECT * FROM {{ source('postgres', 'orders') }}
+{% endsnapshot %}

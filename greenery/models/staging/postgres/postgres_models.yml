@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: stg_postgres__addresses
+    description: Contains the address of the users
+    columns:
+      - name: address_id
+        description: primary key for the table
+        tests:
+          - not_null
+          - unique
+      - name: zipcode
+      - name: state
+      - name: country
+
+  - name: stg_postgres__events
+    description: Contains website event data
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+
+#  - name: stg_postgres__orders
+#    description: Contains 
+#    columns:
+#      - name: order_id
+#        tests:
+#          - not_null
+#          - unique
+            
+
+  - name: stg_postgres__order_items
+    description: Contains
+    tests:
+      - unique:
+          column_name: "(order_id || '-' || product_id)"
+
+  - name: stg_postgres__products
+    description: Contains
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+  
+  - name: stg_postgres__promos
+    columns:
+      - name: promo_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_postgres__users
+    description: Contains users profiles information and meta data
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_postgres__superheroes
+    description:  bla
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: height

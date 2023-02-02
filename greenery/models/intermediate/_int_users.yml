@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_users
+    description: users + addresses
+    columns:
+      - name: user_id
+        description: primary key for the table
+        tests:
+          - not_null
+          - unique
